@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>単語処理 サンプル</title>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <v-app id="app">
+        <v-app-bar color="indigo" dark app height="75" style="margin-bottom: 75px;">
+            <v-app-bar-title>単語処理 サンプル</v-app-bar-title>
+        </v-app-bar>
+        <v-content style="margin-top: 20;">
+            <div>
+                <v-container fluid>
+                    <v-textarea name="input-7-1" filled label="入力文" auto-grow v-model="input" :rules="rules" counter>
+                    </v-textarea>
+                </v-container>
+                <v-container>
+                    <v-row>
+                        <v-col>
+                            <v-btn block color="indigo" dark v-on:click.once="extract">
+                                開始
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </v-container>
+                {{error}}
+            </div>
+            <v-divider></v-divider>
+            <v-card elevation="2" v-if="keywords.length > 0">
+                <v-card-title>
+                    キーワード
+                </v-card-title>
+                <v-card-text>
+                    <v-container>
+                        <v-row>
+                            <v-col v-for="k in keywords" :key="k">
+                                <v-btn rounded color="indigo accent-1" dark>
+                                    {{k}}
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </v-card-text>
+            </v-card>
+        </v-content>
+
+    </v-app>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+<script src="./keywords.js"></script>
+
+<script>
+    const app = new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data: {
+            input: "",
+            rules: [v => v.length <= 250 || 'Max 25 characters'],
+            error: "",
+            keywords: [],
+            selected: [],
+        },
+        methods: {
+            async extract() {
+                const res = await KeywordAPI(this.input)
+                if (res.err) {
+                    this.error = res.err
+                }
+                const result = res.result.phrases
+                this.keywords = result.map(e => e.text)
+            }
+        },
+        computed: {
+
+        },
+        async mounted() {
+
+        },
+    })
+</script>
+
+</html>
