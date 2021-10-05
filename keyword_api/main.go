@@ -3,7 +3,7 @@ package mws21undnm
 import (
 	"bytes"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 )
@@ -33,15 +33,13 @@ func KeywordAPI(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	body := make([]byte, 4096)
-	length, err := req.Body.Read(body)
-	if err != io.EOF {
+	body, err := ioutil.ReadAll(req.Body)
+	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, err.Error())
 		print(err.Error())
 		return
 	}
-	body = body[:length]
 
 	r, err := http.NewRequest(
 		"POST",
@@ -64,19 +62,20 @@ func KeywordAPI(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprint(w, err.Error())
 		return
 	}
-	length, err = res.Body.Read(body)
-	if err != io.EOF {
+
+	body, err = ioutil.ReadAll(res.Body)
+	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, err.Error())
 		print(err.Error())
 		return
 	}
-	body = body[:length]
 
 	res.Body.Close()
 	if res.StatusCode > 299 {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprintf(w, "Response failed with status code: %d and\nbody: %s\n", res.StatusCode, body)
+		println(string(body))
 		println("Invalid status code")
 		return
 	}
