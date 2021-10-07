@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/19cff705c0.js" crossorigin="anonymous"></script>
+    <title>ころなけんさくつーる</title>
+  </head>
+  <body>
+
+    <div class="py-3 px-md-5 text-center bg-primary">
+      <a class="text-center text-white h3 text-decoration-none" href="./index.html" style="@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');font-family: 'Kosugi Maru', sans-serif;">ころなけんさくつーる</a>
+    </div>
+    <div class="mystyle-formArea container">
+      <form  onsubmit="return invalidEnter()">
+        <div class="form-group" id="formArea1">
+          <label class="" for="textarea1"></label>
+          <textarea class="form-control" id="textArea1" rows="5" maxlength="400" placeholder="テキストを入力" name="q" oninput="setTimer()"></textarea>
+        </div>
+
+        <div class="form-group" id="formArea2">
+          <!--単語抽出でキーワードボタンを生成-->
+        </div>
+
+
+        <div class="form-group row justify-content-center new-keyword-area-hidden" id="newKeywordArea">
+          <div class="col-x-2">
+            <input type="text" class="form-control form-control-sm" placeholder="キーワードを追加" id="newKeyword">
+          </div>
+          <div class="col-x-2">
+            <button class="btn btn-secondary btn-sm" type="button" id="keywordAddButton" onclick="addKeyword()">追加</button>
+          </div>
+        </div>
+
+        <div class="sk-chase loaded" id="loader">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
+        <p class="small text-center hidden" id="e_text">キーワードを抽出中</p>
+
+        <button type="button" class="btn btn-primary btn-block" onclick="searchClick()"  style="@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');font-family: 'Kosugi Maru', sans-serif;"><i class="fas fa-search"></i>検索</button>
+      </form>
+    </div>
+
+    <script async src="https://cse.google.com/cse.js?cx=b10ac56e2f0dbfcfc"></script>
+    <div class="gcse-searchresults-only"></div>
+
+    <div id="content">
+    </div>
+
+    <div class="text-center m-2">
+  		<a href="./source_list.html" class="btn btn-default btn-sm rounded-pill border border-primary" role="button">検索ソース一覧</a>
+		</div>
+
+    <script type="text/javascript" src="./js/form.js"></script>
+    <script type="text/javascript" src="./js/keyword.js"></script>
+    <script type="text/javascript" src="./js/content.js"></script>
+  </body>
+</html>
