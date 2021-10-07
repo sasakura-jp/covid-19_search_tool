@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/mystyle.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery.js"></script>
+	<script src="./js/bootstrap.js"></script>
+	<title>検索ソース一覧</title>
+</head>
+<body>
+	<div class="py-3 px-md-5 text-white text-center bg-primary h3">検索ソース一覧</div>
+
+	<div class="text-center m-3">
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalForm">
+			検索ソースのリクエスト
+		</button>
+	</div>
+	<div class="modal fade" id="modalForm" role="dialog">
+		<div class="modal-dialog">
+    	<div class="modal-content">
+      	<!-- Modal ヘッダー -->
+      	<div class="modal-header">
+        	<h5 class="modal-title" id="Modal">検索ソースのリクエスト</h5>
+        	<button type="button" class="close" data-dismiss="modal">
+          	<span aria-hidden="true">×</span>
+          	<span class="sr-only">Close</span>
+          </button>
+      	</div>
+        <form role="form" id="form1">
+        	<!-- Modal ボディー -->
+        	<div class="modal-body">
+        		<label>検索ソースとして追加して欲しいソースを入力してください</label>
+
+          	<div class="form-group">
+ 							<label for="cusno">URL</label>
+            	<input type="text" name="NS_url" id="NS_url" class="form-control">　　
+           	</div>
+         	</div>
+          <!-- Modal フッター -->
+         	<div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close
+           	</button>
+          	<button type="button" class="btn btn-primary" id="chgDateSub">送信
+          	</button>
+        	</div>
+      	</form>
+    	</div>
+  	</div>
+  </div>
+
+	<div class='container'>
+		<div class='accordion' id='accordion1'>
+			<div class='card'>
+				<div class='card-header' id='heading1'>
+					<h5>
+						<img src="./img/government.png" type='button' data-toggle='collapse' data-target='#collapse1'     area-expanded='true' aria-controls='collapse1'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse1' area-expanded='true' aria-controls='collapse1'>
+							政府
+						</button>
+					</h5>
+				</div>
+				<div id='collapse1' class='collapse' aria-labelledby='heading1' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>首相官邸</td>
+									<td><a href='https://www.kantei.go.jp' target='_blank' rel='noopener noreferrer'>https://www.kantei.go.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>内閣官房</td>
+									<td><a href='https://corona.go.jp/' target='_blank' rel='noopener noreferrer'>https://corona.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>厚生労働省</td>
+									<td><a href='https://www.mhlw.go.jp' target='_blank' rel='noopener noreferrer'>https://www.mhlw.go.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>厚生労働省検疫所</td>
+									<td><a href='https://www.forth.go.jp' target='_blank' rel='noopener noreferrer'>https://www.forth.go.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>厚生労働省新型コロナウイルスについて</td>
+									<td><a href='https://www.cov19-vaccine.mhlw.go.jp' target='_blank' rel='noopener noreferrer'>https://www.cov19-vaccine.mhlw.go.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>外務省海外安全ホームページ</td>
+									<td><a href='https://www.anzen.mofa.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.anzen.mofa.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>外務省</td>
+									<td><a href='https://www.mofa.go.jp/mofaj/' target='_blank' rel='noopener noreferrer'>https://www.mofa.go.jp/mofaj/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>8</th>
+									<td>法務省</td>
+									<td><a href='https://www.moj.go.jp' target='_blank' rel='noopener noreferrer'>https://www.moj.go.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>9</th>
+									<td>厚生労働省戸山研究庁舎（国立感染症研究所等）</td>
+									<td><a href='https://www.niid.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.niid.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>10</th>
+									<td>警視庁</td>
+									<td><a href='https://www.npa.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.npa.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>11</th>
+									<td>国家公安委員会</td>
+									<td><a href='https://www.npsc.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.npsc.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>12</th>
+									<td>金融庁</td>
+									<td><a href='https://www.fsa.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.fsa.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>13</th>
+									<td>内閣法制局</td>
+									<td><a href='https://www.clb.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.clb.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>14</th>
+									<td>宮内庁</td>
+									<td><a href='https://www.kunaicho.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.kunaicho.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>15</th>
+									<td>総務省</td>
+									<td><a href='https://www.soumu.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.soumu.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>16</th>
+									<td>財務省</td>
+									<td><a href='https://www.mof.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.mof.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>17</th>
+									<td>文部科学省</td>
+									<td><a href='https://www.mext.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.mext.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>18</th>
+									<td>経済産業省</td>
+									<td><a href='https://www.meti.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.meti.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>19</th>
+									<td>国土交通省</td>
+									<td><a href='https://www.mlit.go.jp/' target='_blank' rel='noopener noreferrer'>https://www.mlit.go.jp/</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>20</th>
+									<td>環境省</td>
+									<td><a href='http://www.env.go.jp/' target='_blank' rel='noopener noreferrer'>http://www.env.go.jp/</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading2'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse2'     area-expanded='true' aria-controls='collapse2'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse2' area-expanded='true' aria-controls='collapse2'>
+							北海道
+						</button>
+					</h5>
+				</div>
+				<div id='collapse2' class='collapse' aria-labelledby='heading2' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>北海道</td>
+									<td><a href='https://www.pref.hokkaido.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.hokkaido.lg.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading3'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse3'     area-expanded='true' aria-controls='collapse3'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse3' area-expanded='true' aria-controls='collapse3'>
+							東北
+						</button>
+					</h5>
+				</div>
+				<div id='collapse3' class='collapse' aria-labelledby='heading3' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>青森</td>
+									<td><a href='https://www.pref.aomori.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.aomori.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>岩手</td>
+									<td><a href='https://www.pref.iwate.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.iwate.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>宮城</td>
+									<td><a href='https://www.pref.miyagi.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.miyagi.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>秋田</td>
+									<td><a href='https://www.pref.akita.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.akita.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>山形</td>
+									<td><a href='https://www.pref.yamagata.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.yamagata.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>福島</td>
+									<td><a href='https://www.pref.fukushima.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.fukushima.lg.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading4'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse4'     area-expanded='true' aria-controls='collapse4'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse4' area-expanded='true' aria-controls='collapse4'>
+							関東
+						</button>
+					</h5>
+				</div>
+				<div id='collapse4' class='collapse' aria-labelledby='heading4' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>茨城</td>
+									<td><a href='https://www.pref.ibaraki.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.ibaraki.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>栃木</td>
+									<td><a href='https://www.pref.tochigi.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.tochigi.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>群馬</td>
+									<td><a href='https://www.pref.gunma.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.gunma.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>埼玉</td>
+									<td><a href='https://www.pref.saitama.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.saitama.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>千葉</td>
+									<td><a href='https://www.pref.chiba.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.chiba.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>東京都</td>
+									<td><a href='https://www.metro.tokyo.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.metro.tokyo.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>神奈川</td>
+									<td><a href='https://www.pref.kanagawa.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kanagawa.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading5'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse5'     area-expanded='true' aria-controls='collapse5'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse5' area-expanded='true' aria-controls='collapse5'>
+							中部
+						</button>
+					</h5>
+				</div>
+				<div id='collapse5' class='collapse' aria-labelledby='heading5' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>新潟</td>
+									<td><a href='https://www.pref.niigata.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.niigata.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>富山</td>
+									<td><a href='https://www.pref.toyama.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.toyama.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>石川</td>
+									<td><a href='https://www.pref.ishikawa.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.ishikawa.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>福井</td>
+									<td><a href='https://www.pref.fukui.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.fukui.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>山梨</td>
+									<td><a href='https://www.pref.yamanashi.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.yamanashi.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>長野</td>
+									<td><a href='https://www.pref.nagano.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.nagano.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>岐阜</td>
+									<td><a href='https://www.pref.gifu.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.gifu.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>8</th>
+									<td>静岡</td>
+									<td><a href='https://www.pref.shizuoka.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.shizuoka.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>9</th>
+									<td>愛知</td>
+									<td><a href='https://www.pref.aichi.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.aichi.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading6'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse6'     area-expanded='true' aria-controls='collapse6'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse6' area-expanded='true' aria-controls='collapse6'>
+							近畿
+						</button>
+					</h5>
+				</div>
+				<div id='collapse6' class='collapse' aria-labelledby='heading6' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>三重</td>
+									<td><a href='https://www.pref.mie.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.mie.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>滋賀</td>
+									<td><a href='https://www.pref.shiga.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.shiga.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>京都</td>
+									<td><a href='https://www.pref.kyoto.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kyoto.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>大阪</td>
+									<td><a href='https://www.pref.osaka.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.osaka.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>兵庫</td>
+									<td><a href='https://web.pref.hyogo.lg.jp' target='_blank' rel='noopener noreferrer'>https://web.pref.hyogo.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>奈良</td>
+									<td><a href='http://www.pref.nara.jp' target='_blank' rel='noopener noreferrer'>http://www.pref.nara.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>和歌山</td>
+									<td><a href='https://www.pref.wakayama.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.wakayama.lg.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading7'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse7'     area-expanded='true' aria-controls='collapse7'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse7' area-expanded='true' aria-controls='collapse7'>
+							中国・四国
+						</button>
+					</h5>
+				</div>
+				<div id='collapse7' class='collapse' aria-labelledby='heading7' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>鳥取</td>
+									<td><a href='https://www.pref.tottori.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.tottori.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>島根</td>
+									<td><a href='https://www.pref.shimane.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.shimane.lg.jp</a></td>
+								</tr>
+									<tr>
+									<th scope='row'>3</th>
+									<td>岡山</td>
+								<td><a href='https://www.pref.okayama.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.okayama.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>広島</td>
+									<td><a href='https://www.pref.hiroshima.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.hiroshima.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>山口</td>
+									<td><a href='https://www.pref.yamaguchi.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.yamaguchi.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>徳島</td>
+									<td><a href='https://www.pref.tokushima.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.tokushima.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>香川</td>
+									<td><a href='https://www.pref.kagawa.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kagawa.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>8</th>
+									<td>愛媛</td>
+									<td><a href='https://www.pref.ehime.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.ehime.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>9</th>
+									<td>高知</td>
+									<td><a href='https://www.pref.kochi.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kochi.lg.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading8'>
+					<h5>
+						<img src="./img/todofuken.png" type='button' data-toggle='collapse' data-target='#collapse8'     area-expanded='true' aria-controls='collapse8'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse8' area-expanded='true' aria-controls='collapse8'>
+							九州・沖縄
+						</button>
+					</h5>
+				</div>
+				<div id='collapse8' class='collapse' aria-labelledby='heading8' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>福岡</td>
+									<td><a href='https://www.pref.fukuoka.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.fukuoka.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>佐賀</td>
+									<td><a href='https://www.pref.saga.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.saga.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>長崎</td>
+									<td><a href='https://www.pref.nagasaki.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.nagasaki.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>熊本</td>
+									<td><a href='https://www.pref.kumamoto.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kumamoto.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>5</th>
+									<td>大分</td>
+									<td><a href='https://www.pref.oita.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.oita.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>6</th>
+									<td>宮崎</td>
+									<td><a href='https://www.pref.miyazaki.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.miyazaki.lg.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>7</th>
+									<td>鹿児島</td>
+									<td><a href='https://www.pref.kagoshima.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.kagoshima.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>8</th>
+									<td>沖縄</td>
+									<td><a href='https://www.pref.okinawa.lg.jp' target='_blank' rel='noopener noreferrer'>https://www.pref.okinawa.lg.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading9'>
+					<h5>
+						<img src="./img/media.png" type='button' data-toggle='collapse' data-target='#collapse9'     area-expanded='true' aria-controls='collapse9'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse9' area-expanded='true' aria-controls='collapse9'>
+							メディア
+						</button>
+					</h5>
+				</div>
+				<div id='collapse9' class='collapse' aria-labelledby='heading9' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>NHK</td>
+									<td><a href='https://www3.nhk.or.jp' target='_blank' rel='noopener noreferrer'>https://www3.nhk.or.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading10'>
+					<h5>
+						<img src="./img/medical.png" type='button' data-toggle='collapse' data-target='#collapse10'     area-expanded='true' aria-controls='collapse10'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse10' area-expanded='true' aria-controls='collapse10'>
+							医療機関
+						</button>
+					</h5>
+				</div>
+				<div id='collapse10' class='collapse' aria-labelledby='heading10' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>コビナビ</td>
+									<td><a href='https://covnavi.jp' target='_blank' rel='noopener noreferrer'>https://covnavi.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>日本医師会</td>
+									<td><a href='https://www.med.or.jp' target='_blank' rel='noopener noreferrer'>https://www.med.or.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>日本小児科学会</td>
+									<td><a href='https://www.jpeds.or.jp' target='_blank' rel='noopener noreferrer'>https://www.jpeds.or.jp</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>4</th>
+									<td>国境なき医師団</td>
+									<td><a href='https://www.msf.or.jp' target='_blank' rel='noopener noreferrer'>https://www.msf.or.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='card-header' id='heading11'>
+					<h5>
+						<img src="./img/others.png" type='button' data-toggle='collapse' data-target='#collapse11'     area-expanded='true' aria-controls='collapse11'>
+						<button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapse11' area-expanded='true' aria-controls='collapse11'>
+							その他
+						</button>
+					</h5>
+				</div>
+				<div id='collapse11' class='collapse' aria-labelledby='heading11' data-parent='#accordion1'>
+					<div class='card-body'>
+						<table class='table table-striped'>
+							<thead>
+								<tr>
+									<th scope='col'>#</th>
+									<th scope='col'>発信元</th>
+									<th scope='col'>URL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope='row'>1</th>
+									<td>山中伸弥</td>
+									<td><a href='https://www.covid19-yamanaka.com' target='_blank' rel='noopener noreferrer'>https://www.covid19-yamanaka.com</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>2</th>
+									<td>FIJ</td>
+									<td><a href='https://fij.info/coronavirus-feature' target='_blank' rel='noopener noreferrer'>https://fij.info/coronavirus-feature</a></td>
+								</tr>
+								<tr>
+									<th scope='row'>3</th>
+									<td>生命保険協会</td>
+									<td><a href='https://www.seiho.or.jp' target='_blank' rel='noopener noreferrer'>https://www.seiho.or.jp</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+		import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
+		const firebaseApp = initializeApp({
+			apiKey: 'AIzaSyAtH8o80SswNts26gcX0jxS58x4glGceQU',
+			authDomain: 'covid-19-search-tool.firebaseapp.com',
+			projectId: 'covid-19-search-tool'
+		});
+
+		const db = getFirestore();
+
+		$('#chgDateSub').on('click', function() {
+			console.log('click');
+  		var NS_url = $('#NS_url').val();
+			console.log(NS_url);
+			if(NS_url){
+				const docRef = addDoc(collection(db, "urls"),{
+					ns_url: NS_url
+				})
+				.then((docRef) => {
+					console.log('Document written with ID: ', docRef.id);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+　			$("#modalForm").modal('hide');
+			}
+		});
+	</script>
+</body>
+</html>
