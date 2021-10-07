@@ -29,7 +29,7 @@ chrome.runtime.onInstalled.addListener(() => {
     const parent = chrome.contextMenus.create({
         id: 'parent',
         contexts: ["selection"],
-        title: 'ころなつーる'
+        title: 'ころなけんさくつーる'
     });
     chrome.contextMenus.create({
         parentId: "parent",
