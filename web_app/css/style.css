@@ -1,0 +1,42 @@
+.gsc-webResult.gsc-result.government::before{
+	content: url(../img/government.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
+.gsc-webResult.gsc-result.todofuken::before{
+	content: url(../img/todofuken.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
+.gsc-webResult.gsc-result.medical::before{
+	content: url(../img/medical.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
+.gsc-webResult.gsc-result.media::before{
+	content: url(../img/media.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
+.gsc-webResult.gsc-result.others::before{
+	content: url(../img/others.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
+.gsc-webResult.gsc-result.s_unknown::before{
+	content: url(../img/s_unknown.png);
+	position: absolute;
+	right: 100%;
+	transform: translate(30px, 20px);
+}
+
